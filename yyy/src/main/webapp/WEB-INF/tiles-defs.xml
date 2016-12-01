@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+       "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+<tiles-definitions>
+
+	<!-- Actual tile definitions -->
+
+	<definition name=".header" path="/jsp/common/header.jsp"
+		controllerClass="com.volvo.sidx.sidx.web.controller.VersionController" />
+	<definition name=".menu" path="/jsp/common/menu.jsp"
+		controllerClass="com.volvo.sidx.sidx.web.controller.MenuController" />
+
+	<definition name=".intro.body" path="/jsp/intro.jsp" />
+    <definition name=".systemMonitor.body" path="/jsp/systemMonitor.jsp" />
+    <definition name=".distribution.body" path="/jsp/distribution.jsp" />
+    <definition name=".removeLockedForEdit.body" path="/jsp/removeLockedForEdit.jsp" />
+    <definition name=".blockUsers.body" path="/jsp/blockUsers.jsp" />
+    <definition name=".checkImages.body" path="/jsp/checkImages.jsp" />
+    <definition name=".syncImageCache.body" path="/jsp/syncImageCache.jsp" />
+    <definition name=".syncLangEdition.body" path="/jsp/syncLangEdition.jsp" />
+    <definition name=".genLangEdition.body" path="/jsp/genLangEdition.jsp" />
+    <definition name=".cleanupPublication.body" path="/jsp/cleanupPublication.jsp" />
+    <definition name=".getUserList.body" path="/jsp/getUserList.jsp" />
+    <definition name=".metaDataTranslation.body" path="/jsp/metaDataTranslation.jsp" />
+    <definition name=".addActionCode.body" path="/jsp/addActionCode.jsp" /> 
+    <definition name=".addInfotype.body" path="/jsp/addInfotype.jsp" />
+    <definition name=".addInfotypeGroup.body" path="/jsp/addInfotypeGroup.jsp" />    
+    <definition name=".addQualifier.body" path="/jsp/addQualifier.jsp" />
+    <definition name=".addServiceCategory.body" path="/jsp/addServiceCategory.jsp" />
+	<definition name=".addWorkCode.body" path="/jsp/addWorkCode.jsp" />
+    <definition name=".modelstf.body" path="/jsp/manageModelStf.jsp" />
+    <definition name=".getmodelstf.body" path="/jsp/getModelStf.jsp" /> 
+    <definition name=".setmodelstf.body" path="/jsp/setModelStf.jsp" />
+    <definition name=".report.body" path="/jsp/report.jsp" />
+    <definition name=".recalculate.body" path="/jsp/recalculate.jsp" />
+    <definition name=".ieDocNoLookup.body" path="/jsp/ieDocNoLookup.jsp" />
+    <definition name=".getTranslationOrderInfo.body" path="/jsp/getTranslationOrderInfo.jsp" />
+    <definition name=".sendTranslationOrder.body" path="/jsp/sendTranslationOrder.jsp" />
+    <definition name=".backoutTranslationOrders.body" path="/jsp/backoutTranslationOrders.jsp" />
+    <definition name=".backoutTranslationOrdersSelect.body" path="/jsp/backoutTranslationOrdersSelect.jsp" />
+  
+  <!-- Layout definitions -->
+
+	<definition name=".main.layout" path="/jsp/layout/main.jsp">
+		<put name="header" value=".header" />
+		<put name="menu" value=".menu" />
+	</definition>
+
+	<!-- Complete page definitions -->
+
+	<definition name=".intro" extends=".main.layout">
+		<put name="body" value=".intro.body" />
+	</definition>
+
+    <definition name=".systemMonitor" extends=".main.layout">
+        <put name="body" value=".systemMonitor.body" />
+    </definition>
+
+    <definition name=".addActionCode" extends=".main.layout">
+        <put name="body" value=".addActionCode.body" />
+    </definition>
+  
+    <definition name=".addInfotype" extends=".main.layout">
+        <put name="body" value=".addInfotype.body" />
+    </definition>
+  
+    <definition name=".addInfotypeGroup" extends=".main.layout">
+        <put name="body" value=".addInfotypeGroup.body" />
+    </definition>
+  
+    <definition name=".addQualifier" extends=".main.layout">
+        <put name="body" value=".addQualifier.body" />
+    </definition>
+  
+    <definition name=".addServiceCategory" extends=".main.layout">
+        <put name="body" value=".addServiceCategory.body" />
+    </definition>
+
+    <definition name=".addWorkCode" extends=".main.layout">
+        <put name="body" value=".addWorkCode.body" />
+    </definition>
+  
+	<definition name=".modelstf" extends=".main.layout">
+		<put name="body" value=".modelstf.body" />
+	</definition>
+
+    <definition name=".getmodelstf" extends=".main.layout">
+        <put name="body" value=".getmodelstf.body" />
+    </definition>
+    
+    <definition name=".setmodelstf" extends=".main.layout">
+        <put name="body" value=".setmodelstf.body" />
+    </definition>
+  
+    <definition name=".recalculate" extends=".main.layout">
+        <put name="body" value=".recalculate.body" />
+    </definition>
+
+    <definition name=".report" extends=".main.layout">
+        <put name="body" value=".report.body" />
+    </definition>
+  
+    <definition name=".distribution" extends=".main.layout">
+        <put name="body" value=".distribution.body" />
+    </definition>
+
+    <definition name=".removeLockedForEdit" extends=".main.layout">
+      <put name="body" value=".removeLockedForEdit.body" />
+    </definition>
+  
+    <definition name=".blockUsers" extends=".main.layout">
+      <put name="body" value=".blockUsers.body" />
+    </definition>
+
+    <definition name=".checkImages" extends=".main.layout">
+      <put name="body" value=".checkImages.body" />
+    </definition>
+
+    <definition name=".syncImageCache" extends=".main.layout">
+      <put name="body" value=".syncImageCache.body" />
+    </definition>
+
+    <definition name=".syncLangEdition" extends=".main.layout">
+      <put name="body" value=".syncLangEdition.body" />
+    </definition>
+
+    <definition name=".genLangEdition" extends=".main.layout">
+      <put name="body" value=".genLangEdition.body" />
+    </definition>
+        
+    <definition name=".cleanupPublication" extends=".main.layout">
+      <put name="body" value=".cleanupPublication.body" />
+    </definition>
+    
+    <definition name=".getUserList" extends=".main.layout">
+      <put name="body" value=".getUserList.body" />
+    </definition>
+      
+    <definition name=".metaDataTranslation" extends=".main.layout">
+        <put name="body" value=".metaDataTranslation.body" />
+    </definition>
+    
+    <definition name=".ieDocNoLookup" extends=".main.layout">
+        <put name="body" value=".ieDocNoLookup.body" />
+    </definition>
+
+    <definition name=".getTranslationOrderInfo" extends=".main.layout">
+        <put name="body" value=".getTranslationOrderInfo.body" />
+    </definition>
+    
+    <definition name=".sendTranslationOrder" extends=".main.layout">
+        <put name="body" value=".sendTranslationOrder.body" />
+    </definition>
+
+    <definition name=".backoutTranslationOrders" extends=".main.layout">
+        <put name="body" value=".backoutTranslationOrders.body" />
+    </definition>
+
+    <definition name=".backoutTranslationOrdersSelect" extends=".main.layout">
+        <put name="body" value=".backoutTranslationOrdersSelect.body" />
+    </definition>
+</tiles-definitions>

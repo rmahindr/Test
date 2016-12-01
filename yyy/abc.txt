@@ -1,0 +1,1 @@
+ mvn archetype:generate -DgroupId=com.volvo.jvs -DartifactId=yyy -DarchetypeArtifactId=maven-archetype-webapp  -DinteractiveMode=false
