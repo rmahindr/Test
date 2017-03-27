@@ -1,0 +1,940 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE form-validation PUBLIC "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.0//EN" "validator_1_0.dtd" >
+
+<form-validation>
+    	<formset>
+          <form name="/GetModelStfCall">
+          <field property="usrCode"
+            depends="required,minlength,maxlength">
+            <arg0 key="form.usrCode" />
+            <arg1 name="minlength" key="${var:minlength}"
+              resource="false" />
+            <var>
+              <var-name>minlength</var-name>
+              <var-value>5</var-value>
+            </var>
+            <arg2 name="maxlength" key="${var:maxlength}"
+              resource="false" />
+            <var>
+              <var-name>maxlength</var-name>
+              <var-value>8</var-value>
+            </var>
+          </field>
+        </form>
+  
+		<form name="/SetModelStfCall">
+			<field property="usrCode" depends="required,minlength,maxlength">
+				<arg0 key="form.usrCode" />
+				<arg1 name="minlength" key="${var:minlength}"
+					resource="false" />
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>5</var-value>
+				</var>
+				<arg2 name="maxlength" key="${var:maxlength}" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>8</var-value>
+				</var>
+			</field>
+            <field property="model" depends="required,minlength,maxlength">
+              <arg0 key="set.modelstf.model" />
+              <arg1 name="minlength" key="${var:minlength}" resource="false" />
+              <var>
+                <var-name>minlength</var-name>
+                <var-value>1</var-value>
+              </var>
+              <arg2 name="maxlength" key="${var:maxlength}" resource="false" />
+              <var>
+                <var-name>maxlength</var-name>
+                <var-value>8</var-value>
+              </var>
+            </field>
+<!--
+            <field property="startDate" depends="required,date,minlength,maxlength">
+              <arg0 key="set.modelstf.startDate" />
+              <arg1 name="minlength" key="${var:minlength}" resource="false" />
+              <var>
+                <var-name>minlength</var-name>
+                <var-value>10</var-value>
+              </var>
+              <arg2 name="maxlength" key="${var:maxlength}" resource="false" />
+              <var>
+                <var-name>maxlength</var-name>
+                <var-value>10</var-value>
+              </var>
+            </field>
+ -->            
+            <field property="stf" depends="required,float,minlength,maxlength,mask">
+              <arg0 key="set.modelstf.stf" />
+              <arg1 name="minlength" key="${var:minlength}" resource="false" />
+              <var>
+                <var-name>minlength</var-name>
+                <var-value>4</var-value>
+              </var>
+              <arg2 name="maxlength" key="${var:maxlength}" resource="false" />
+              <var>
+                <var-name>maxlength</var-name>
+                <var-value>4</var-value>
+              </var>
+              <var>
+                  <var-name>mask</var-name>
+                  <var-value>^[0-9][.][0-9][0-9]$</var-value>
+              </var>  
+            </field>
+		</form>
+
+        <form name="/BlockUsersCall">
+          <field property="usrCode"
+            depends="required,minlength,maxlength">
+            <arg0 key="form.usrCode" />
+            <arg1 name="minlength" key="${var:minlength}"
+              resource="false" />
+            <var>
+              <var-name>minlength</var-name>
+              <var-value>3</var-value>
+            </var>
+            <arg2 name="maxlength" key="${var:maxlength}"
+              resource="false" />
+            <var>
+              <var-name>maxlength</var-name>
+              <var-value>8</var-value>
+            </var>
+          </field>
+          <field property="password"
+            depends="required,minlength,maxlength">
+            <arg0 key="form.password" />
+            <arg1 name="minlength" key="${var:minlength}"
+              resource="false" />
+            <var>
+              <var-name>minlength</var-name>
+              <var-value>1</var-value>
+            </var>
+            <arg2 name="maxlength" key="${var:maxlength}"
+              resource="false" />
+            <var>
+              <var-name>maxlength</var-name>
+              <var-value>12</var-value>
+            </var>
+          </field>
+        </form>
+        
+        <form name="/CleanupPublicationCall">
+          <field property="usrCode"
+            depends="required,minlength,maxlength">
+            <arg0 key="form.usrCode" />
+            <arg1 name="minlength" key="${var:minlength}"
+              resource="false" />
+            <var>
+              <var-name>minlength</var-name>
+              <var-value>3</var-value>
+            </var>
+            <arg2 name="maxlength" key="${var:maxlength}"
+              resource="false" />
+            <var>
+              <var-name>maxlength</var-name>
+              <var-value>8</var-value>
+            </var>
+          </field>
+          <field property="password"
+            depends="required,minlength,maxlength">
+            <arg0 key="form.password" />
+            <arg1 name="minlength" key="${var:minlength}"
+              resource="false" />
+            <var>
+              <var-name>minlength</var-name>
+              <var-value>1</var-value>
+            </var>
+            <arg2 name="maxlength" key="${var:maxlength}"
+              resource="false" />
+            <var>
+              <var-name>maxlength</var-name>
+              <var-value>12</var-value>
+            </var>
+          </field>
+          <field property="ioNumber"
+            depends="required,integer">
+            <arg0 key="form.ioNumber" />
+          </field>
+        </form>
+        
+        <form name="/RecalculateCall">
+          <field property="usrCode" depends="required,minlength,maxlength">
+            <arg0 key="form.usrCode" />
+            <arg1 name="minlength" key="${var:minlength}" resource="false" />
+            <var>
+              <var-name>minlength</var-name>
+              <var-value>5</var-value>
+            </var>
+            <arg2 name="maxlength" key="${var:maxlength}" resource="false" />
+            <var>
+              <var-name>maxlength</var-name>
+              <var-value>8</var-value>
+            </var>
+          </field>
+          <field property="model" depends="required,minlength,maxlength">
+            <arg0 key="recalculate.model" />
+            <arg1 name="minlength" key="${var:minlength}" resource="false" />
+            <var>
+              <var-name>minlength</var-name>
+              <var-value>1</var-value>
+            </var>
+            <arg2 name="maxlength" key="${var:maxlength}" resource="false" />
+            <var>
+              <var-name>maxlength</var-name>
+              <var-value>8</var-value>
+            </var>
+          </field>
+          <field property="operation" depends="required">
+            <arg0 key="recalculate.operation" />
+          </field>
+             
+        </form>
+    
+        <form name="/SystemMonitorActionCodeCall">
+            <field property="usrCode" depends="required,minlength,maxlength">
+                <arg0 key="form.usrCode" />
+                <arg1 name="minlength" key="${var:minlength}"
+                    resource="false" />
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>5</var-value>
+                </var>
+                <arg2 name="maxlength" key="${var:maxlength}"
+                    resource="false" />
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>8</var-value>
+                </var>
+            </field>
+            <field property="password"
+                  depends="required,minlength,maxlength">
+                <arg0 key="form.password" />
+                <arg1 name="minlength" key="${var:minlength}"
+                    resource="false" />
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>1</var-value>
+                </var>
+                <arg2 name="maxlength" key="${var:maxlength}"
+                    resource="false" />
+                <var>
+                <var-name>maxlength</var-name>
+                <var-value>12</var-value>
+            </var>
+            </field>
+            <field property="actionCode" depends="required, minlength, maxlength">
+                <arg0 key="sysMon.actionCode" />
+                <arg1 name="minlength" key="${var:minlength}"
+                    resource="false" />
+                 <var>
+                    <var-name>minlength</var-name>
+                    <var-value>2</var-value>
+                </var>
+                <arg2 name="maxlength" key="${var:maxlength}"
+                    resource="false" />
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>2</var-value>
+                </var>
+            </field>
+            <field property="manufacturerCode" depends="required, minlength, maxlength">
+                <arg0 key="sysMon.actionCode.manufacturerCode" />
+                <arg1 name="minlength" key="${var:minlength}"
+                    resource="false" />
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>2</var-value>
+                </var>
+                <arg2 name="maxlength" key="${var:maxlength}"
+                    resource="false" />
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>3</var-value>
+                </var>
+                
+            </field>
+            <field property="infotype" depends="required, integer, minlength, maxlength">
+                <arg0 key="sysMon.actionCode.infotype" />
+                <arg1 name="minlength" key="${var:minlength}"
+                    resource="false" />
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>1</var-value>
+                </var>
+                <arg2 name="maxlength" key="${var:maxlength}"
+                    resource="false" />
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>4</var-value>
+                </var>               
+            </field>
+            <field property="qualifier" depends="required, minlength, maxlength">
+                <arg0 key="sysMon.actionCode.qualifier" />
+                <arg1 name="minlength" key="${var:minlength}"
+                    resource="false" />
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>2</var-value>
+                </var>
+                <arg2 name="maxlength" key="${var:maxlength}"
+                    resource="false" />
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>2</var-value>
+                </var>               
+            </field>
+            <field property="textEng" depends="required, minlength, maxlength">
+                <arg0 key="sysMon.textEng" />
+                <arg1 name="minlength" key="${var:minlength}"
+                    resource="false" />
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>2</var-value>
+                 </var>
+                <arg2 name="maxlength" key="${var:maxlength}"
+                    resource="false" />
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>80</var-value>
+                </var>
+            </field> 
+            <field property="textSwe" depends="required, minlength, maxlength">
+                <arg0 key="sysMon.textSwe" />
+                <arg1 name="minlength" key="${var:minlength}"
+                    resource="false" />
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>2</var-value>
+                </var>
+                <arg2 name="maxlength" key="${var:maxlength}"
+                    resource="false" />
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>80</var-value>
+                </var>
+            </field>
+        </form>
+        <form name="/SystemMonitorInfotypeCall">
+            <field property="usrCode"
+                depends="required,minlength,maxlength">
+                <arg0 key="form.usrCode" />
+                <arg1 name="minlength" key="${var:minlength}"
+                    resource="false" />
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>5</var-value>
+                </var>
+                <arg2 name="maxlength" key="${var:maxlength}"
+                    resource="false" />
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>8</var-value>
+                </var>
+            </field>
+            <field property="password"
+                depends="required,minlength,maxlength">
+                <arg0 key="form.password" />
+                <arg1 name="minlength" key="${var:minlength}"
+                    resource="false" />
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>1</var-value>
+                </var>
+                <arg2 name="maxlength" key="${var:maxlength}"
+                    resource="false" />
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>12</var-value>
+                </var>
+            </field>
+            <field property="infotypeCode" depends="required, integer, minlength, maxlength">
+                <arg0 key="sysMon.infotype.code" />
+                <arg1 name="minlength" key="${var:minlength}"
+                    resource="false" />
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>1</var-value>
+                </var>
+                <arg2 name="maxlength" key="${var:maxlength}"
+                    resource="false" />
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>4</var-value>
+                </var>
+            </field>
+            <field property="manufacturerCode" depends="required, minlength, maxlength">
+                <arg0 key="sysMon.infotype.manufacturerCode" />
+                <arg1 name="minlength" key="${var:minlength}"
+                    resource="false" />
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>2</var-value>
+                </var>
+                <arg2 name="maxlength" key="${var:maxlength}"
+                    resource="false" />
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>3</var-value>
+                </var>
+            </field>
+            <field property="groupCode" depends="required, integer, minlength, maxlength">
+                <arg0 key="sysMon.infotype.groupCode" />
+                <arg1 name="minlength" key="${var:minlength}"
+                    resource="false" />
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>1</var-value>
+                </var>
+                <arg2 name="maxlength" key="${var:maxlength}"
+                    resource="false" />
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>4</var-value>
+                </var>
+            </field>
+            <field property="usesOperation" depends="required, minlength, maxlength">
+                <arg0 key="sysMon.infotype.usesOperation" />
+                <arg1 name="minlength" key="${var:minlength}"
+                    resource="false" />
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>1</var-value>
+                </var>
+                <arg2 name="maxlength" key="${var:maxlength}"
+                    resource="false" />
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>1</var-value>
+                </var>
+            </field>
+            <field property="name" depends="required, minlength, maxlength, mask">
+                <msg name="mask" key="sysMon.name.mask" />
+                <arg0 key="sysMon.infotype.name" />
+                <arg1 name="minlength" key="${var:minlength}" resource="false" />
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>1</var-value>
+                </var>
+                <arg2 name="maxlength" key="${var:maxlength}"
+                    resource="false" />
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>30</var-value>
+                </var>
+                <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[a-zA-Z0-9\s]*$</var-value>
+                </var>  
+            </field>
+            <field property="textEng" depends="required, minlength, maxlength">
+                <arg0 key="sysMon.textEng" />
+                <arg1 name="minlength" key="${var:minlength}"
+                    resource="false" />
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>2</var-value>
+                </var>
+                <arg2 name="maxlength" key="${var:maxlength}"
+                    resource="false" />
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>80</var-value>
+                </var>
+            </field>
+            <field property="textSwe" depends="required, minlength, maxlength">
+                <arg0 key="sysMon.textSwe" />
+                <arg1 name="minlength" key="${var:minlength}"
+                    resource="false" />
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>2</var-value>
+                </var>
+                <arg2 name="maxlength" key="${var:maxlength}"
+                    resource="false" />
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>80</var-value>
+                </var>
+            </field>
+        </form>
+        <form name="/SystemMonitorInfotypeGroupCall">
+            <field property="usrCode"
+                depends="required,minlength,maxlength">
+                <arg0 key="form.usrCode" />
+                <arg1 name="minlength" key="${var:minlength}"
+                    resource="false" />
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>5</var-value>
+                </var>
+                <arg2 name="maxlength" key="${var:maxlength}"
+                    resource="false" />
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>8</var-value>
+                </var>
+            </field>
+            <field property="password"
+                depends="required,minlength,maxlength">
+                <arg0 key="form.password" />
+                <arg1 name="minlength" key="${var:minlength}"
+                    resource="false" />
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>1</var-value>
+                </var>
+                <arg2 name="maxlength" key="${var:maxlength}"
+                    resource="false" />
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>12</var-value>
+                </var>
+            </field>
+            <field property="infotypeGroupCode" depends="required, integer, minlength, maxlength">
+                <arg0 key="sysMon.infotypeGroup.code" />
+                <arg1 name="minlength" key="${var:minlength}"
+                    resource="false" />
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>1</var-value>
+                </var>
+                <arg2 name="maxlength" key="${var:maxlength}"
+                    resource="false" />
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>4</var-value>
+                </var>
+            </field>
+            <field property="manufacturerCode" depends="required, minlength, maxlength">
+                <arg0 key="sysMon.infotypeGroup.manufacturerCode" />
+                <arg1 name="minlength" key="${var:minlength}"
+                    resource="false" />
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>2</var-value>
+                </var>
+                <arg2 name="maxlength" key="${var:maxlength}"
+                    resource="false" />
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>3</var-value>
+                </var>
+            </field>
+            <field property="name" depends="required, minlength, maxlength, mask">
+                <msg name="mask" key="sysMon.name.mask" />
+                <arg0 key="sysMon.infotypeGroup.name" />
+                <arg1 name="minlength" key="${var:minlength}"
+                    resource="false" />
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>1</var-value>
+                </var>
+                <arg2 name="maxlength" key="${var:maxlength}"
+                    resource="false" />
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>30</var-value>
+                </var>
+                <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[a-zA-Z0-9\s]*$</var-value>
+                </var>  
+                
+            </field>
+        </form>
+        <form name="/SystemMonitorQualifierCall">
+            <field property="usrCode"
+                depends="required,minlength,maxlength">
+                <arg0 key="form.usrCode" />
+                <arg1 name="minlength" key="${var:minlength}"
+                    resource="false" />
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>5</var-value>
+                </var>
+                <arg2 name="maxlength" key="${var:maxlength}"
+                    resource="false" />
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>8</var-value>
+                </var>
+            </field>
+            <field property="password"
+                depends="required,minlength,maxlength">
+                <arg0 key="form.password" />
+                <arg1 name="minlength" key="${var:minlength}"
+                    resource="false" />
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>1</var-value>
+                </var>
+                <arg2 name="maxlength" key="${var:maxlength}"
+                    resource="false" />
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>12</var-value>
+                </var>
+            </field>
+            <field property="qualifier" depends="required, minlength, maxlength">
+                <arg0 key="sysMon.qualifier" />
+                <arg1 name="minlength" key="${var:minlength}"
+                    resource="false" />
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>1</var-value>
+                </var>
+                <arg2 name="maxlength" key="${var:maxlength}"
+                    resource="false" />
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>2</var-value>
+                </var>
+            </field>
+            <field property="pubtype" depends="required, minlength, maxlength">
+                <arg0 key="sysMon.pubtype" />
+                <arg1 name="minlength" key="${var:minlength}"
+                    resource="false" />
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>4</var-value>
+                </var>
+                <arg2 name="maxlength" key="${var:maxlength}"
+                    resource="false" />
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>4</var-value>
+                </var>
+            </field>
+            <field property="manufacturerCode" depends="required, minlength, maxlength">
+                <arg0 key="sysMon.qualifier.manufacturerCode" />
+                <arg1 name="minlength" key="${var:minlength}"
+                    resource="false" />
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>2</var-value>
+                </var>
+                <arg2 name="maxlength" key="${var:maxlength}"
+                    resource="false" />
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>3</var-value>
+                </var>
+            </field>
+            <field property="name" depends="required, minlength, maxlength, mask">
+                <msg name="mask" key="sysMon.name.mask" />
+                <arg0 key="sysMon.qualifier.name" />
+                <arg1 name="minlength" key="${var:minlength}"
+                    resource="false" />
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>1</var-value>
+                </var>
+                <arg2 name="maxlength" key="${var:maxlength}"
+                    resource="false" />
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>30</var-value>
+                </var>
+                <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[a-zA-Z0-9\s]*$</var-value>
+                </var>  
+            </field>
+            <field property="textEng" depends="required, minlength, maxlength">
+                <arg0 key="sysMon.textEng" />
+                <arg1 name="minlength" key="${var:minlength}"
+                    resource="false" />
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>2</var-value>
+                </var>
+                <arg2 name="maxlength" key="${var:maxlength}"
+                    resource="false" />
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>80</var-value>
+                </var>
+            </field>
+            <field property="textSwe" depends="required, minlength, maxlength">
+                <arg0 key="sysMon.textSwe" />
+                <arg1 name="minlength" key="${var:minlength}"
+                    resource="false" />
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>2</var-value>
+                </var>
+                <arg2 name="maxlength" key="${var:maxlength}"
+                    resource="false" />
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>80</var-value>
+                </var>
+            </field>
+        </form>
+        <form name="/SystemMonitorServiceCategoryCall">
+            <field property="usrCode"
+                depends="required,minlength,maxlength">
+                <arg0 key="form.usrCode" />
+                <arg1 name="minlength" key="${var:minlength}"
+                    resource="false" />
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>5</var-value>
+                </var>
+                <arg2 name="maxlength" key="${var:maxlength}"
+                    resource="false" />
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>8</var-value>
+                </var>
+            </field>
+            <field property="password"
+                depends="required,minlength,maxlength">
+                <arg0 key="form.password" />
+                <arg1 name="minlength" key="${var:minlength}"
+                    resource="false" />
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>1</var-value>
+                </var>
+                <arg2 name="maxlength" key="${var:maxlength}"
+                    resource="false" />
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>12</var-value>
+                </var>
+            </field>
+            <field property="serviceCategoryCode1" depends="required, integer, intRange">
+                <arg0 key="sysMon.serviceCategory.code1" />
+                <arg1 name="intRange" key="${var:min}" resource="false"/>  
+                <arg2 name="intRange" key="${var:max}" resource="false"/>  
+                <var>  
+                   <var-name>min</var-name>  
+                   <var-value>0</var-value>  
+                </var>  
+                <var>  
+                   <var-name>max</var-name>  
+                   <var-value>999</var-value>  
+                </var>  
+            </field>
+            <field property="serviceCategoryCode2" depends="validwhen, integer, intRange">
+                <arg0 key="sysMon.serviceCategory.code2" />
+                <arg1 name="intRange" key="${var:min}" resource="false"/>  
+                <arg2 name="intRange" key="${var:max}" resource="false"/>  
+                <var>  
+                   <var-name>min</var-name>  
+                   <var-value>0</var-value>  
+                </var>  
+                <var>  
+                   <var-name>max</var-name>  
+                   <var-value>999</var-value>  
+                </var>  
+                <var>
+                    <var-name>test</var-name>
+                    <var-value>((serviceCategoryCode3 == null) or (*this* != null))</var-value>
+                </var>
+            </field>
+            <field property="serviceCategoryCode3" depends="validwhen, integer, intRange">
+                <arg0 key="sysMon.serviceCategory.code3" />
+                <arg1 name="intRange" key="${var:min}" resource="false"/>  
+                <arg2 name="intRange" key="${var:max}" resource="false"/>  
+                <var>  
+                   <var-name>min</var-name>  
+                   <var-value>0</var-value>  
+                </var>  
+                <var>  
+                   <var-name>max</var-name>  
+                   <var-value>999</var-value>  
+                </var>  
+                <var>
+                    <var-name>test</var-name>
+                    <var-value>((serviceCategoryCode4 == null) or (*this* != null))</var-value>
+                </var>
+            </field>
+            <field property="serviceCategoryCode4" depends="integer, intRange">
+                <arg0 key="sysMon.serviceCategory.code4" />
+                
+                <arg1 name="intRange" key="${var:min}" resource="false"/>  
+                <arg2 name="intRange" key="${var:max}" resource="false"/>  
+                <var>  
+                   <var-name>min</var-name>  
+                   <var-value>0</var-value>  
+                </var>  
+                <var>  
+                   <var-name>max</var-name>  
+                   <var-value>999</var-value>  
+                </var>  
+            </field>
+            <field property="serviceCategoryType" depends="required, minlength, maxlength">
+                <arg0 key="sysMon.serviceCategory.type" />
+                <arg1 name="minlength" key="${var:minlength}"
+                    resource="false" />
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>1</var-value>
+                </var>
+                <arg2 name="maxlength" key="${var:maxlength}"
+                    resource="false" />
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>5</var-value>
+                </var>
+            </field>
+            <field property="manufacturerCode" depends="required, minlength, maxlength">
+                <arg0 key="sysMon.serviceCategory.manufacturerCode" />
+                <arg1 name="minlength" key="${var:minlength}"
+                    resource="false" />
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>2</var-value>
+                </var>
+                <arg2 name="maxlength" key="${var:maxlength}"
+                    resource="false" />
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>3</var-value>
+                </var>
+            </field>
+            <field property="textEng" depends="required, minlength, maxlength">
+                <arg0 key="sysMon.textEng" />
+                <arg1 name="minlength" key="${var:minlength}"
+                    resource="false" />
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>2</var-value>
+                </var>
+                <arg2 name="maxlength" key="${var:maxlength}"
+                    resource="false" />
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>80</var-value>
+                </var>
+            </field>
+            <field property="textSwe" depends="required, minlength, maxlength">
+                <arg0 key="sysMon.textSwe" />
+                <arg1 name="minlength" key="${var:minlength}"
+                    resource="false" />
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>2</var-value>
+                </var>
+                <arg2 name="maxlength" key="${var:maxlength}"
+                    resource="false" />
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>80</var-value>
+                </var>
+            </field>
+        </form>
+        <form name="/SystemMonitorWorkCodeCall">
+            <field property="usrCode" depends="required,minlength,maxlength">
+                <arg0 key="form.usrCode" />
+                <arg1 name="minlength" key="${var:minlength}"
+                    resource="false" />
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>5</var-value>
+                </var>
+                <arg2 name="maxlength" key="${var:maxlength}"
+             	  resource="false" />
+                <var>
+                  <var-name>maxlength</var-name>
+                  <var-value>8</var-value>
+                </var>
+            </field>
+            <field property="password"
+                depends="required,minlength,maxlength">
+                <arg0 key="form.password" />
+                <arg1 name="minlength" key="${var:minlength}"
+                    resource="false" />
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>1</var-value>
+                </var>
+                <arg2 name="maxlength" key="${var:maxlength}"
+                    resource="false" />
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>12</var-value>
+                </var>
+            </field>
+            <field property="workCode" depends="required, minlength, maxlength">
+                <arg0 key="sysMon.workCode" />
+                <arg1 name="minlength" key="${var:minlength}"
+                    resource="false" />
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>2</var-value>
+                </var>
+                <arg2 name="maxlength" key="${var:maxlength}"
+                    resource="false" />
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>2</var-value>
+                </var>
+            </field>
+            <field property="manufacturerCode" depends="required, minlength, maxlength">
+                <arg0 key="sysMon.workCode.manufacturerCode" />
+                <arg1 name="minlength" key="${var:minlength}"
+                    resource="false" />
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>2</var-value>
+                </var>
+                <arg2 name="maxlength" key="${var:maxlength}"
+                    resource="false" />
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>3</var-value>
+                </var>
+            </field>
+            <field property="operationAllowed" depends="required, minlength, maxlength">
+                <arg0 key="sysMon.workCode.operationAllowed" />
+                <arg1 name="minlength" key="${var:minlength}"
+                    resource="false" />
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>1</var-value>
+                </var>
+                <arg2 name="maxlength" key="${var:maxlength}"
+                    resource="false" />
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>1</var-value>
+                </var>
+            </field>
+            <field property="textEng" depends="required, minlength, maxlength">
+                <arg0 key="sysMon.textEng" />
+                <arg1 name="minlength" key="${var:minlength}"
+                    resource="false" />
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>2</var-value>
+                </var>
+                <arg2 name="maxlength" key="${var:maxlength}"
+                    resource="false" />
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>80</var-value>
+                </var>
+            </field>
+            <field property="textSwe" depends="required, minlength, maxlength">
+                <arg0 key="sysMon.textSwe" />
+                <arg1 name="minlength" key="${var:minlength}"
+                    resource="false" />
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>2</var-value>
+                </var>
+                <arg2 name="maxlength" key="${var:maxlength}"
+                    resource="false" />
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>80</var-value>
+                </var>
+            </field>
+         </form>
+	</formset>
+</form-validation>

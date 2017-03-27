@@ -1,0 +1,1 @@
+Jsp Accessed by struts
